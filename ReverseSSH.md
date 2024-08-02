@@ -25,7 +25,7 @@ https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-wo
 in A box do following to create the reverse ssh connection
 
 ```
-ssh -f qngfNTR *:5500:localhost:22 <username>:192.168.1.11
+ssh -f -N -T -R:5500:localhost:22 <username>@192.168.1.11
 ```
 
 ### 5. connect in B box
@@ -72,6 +72,13 @@ resart the sshd
 
 ```
 sudo service sshd restart
+```
+
+restart in mac
+
+```
+sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
 
