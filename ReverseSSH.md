@@ -26,12 +26,14 @@ in A box do following to create the reverse ssh connection
 
 ```
 ssh -f -N -T -R:5500:localhost:22 <username>@192.168.1.11
+//user name of 192.168.1.11 B box
 ```
 
 ### 5. connect in B box
 
 ```
 ssh <username>@127.0.0.1 -p 5500
+// the username of 192.168.1.10 A box
 ```
 
 ### 6. Trouble shooting and pre-requirment
